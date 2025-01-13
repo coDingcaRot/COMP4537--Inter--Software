@@ -1,0 +1,10 @@
+#gamebox{
+    width: auto;
+    height: 30em;
+    outline: none;
+}
+
+button{
+    width: 10em;
+    height: 5em;
+}
