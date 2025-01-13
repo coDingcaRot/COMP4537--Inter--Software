@@ -115,7 +115,6 @@ class Game{
         
         //pause for n time and then hide, scatter, and show buttons every 2 seconds for n times
         this.timeoutList.push(setTimeout(() => {
-            // Step 1: Hide the buttons
             this.#displayButtons(false);
 
             let scatterCount = 0; // tracks how many times we scattered
@@ -128,6 +127,10 @@ class Game{
                 if (scatterCount >= this.buttonList.length) {
                     clearInterval(scatterInterval);
                     scatterCount = 0;
+
+                    this.buttonList.forEach(button => {
+                        button.disableButton(false);
+                    })
                 }
             }, 2000); // Scatter every 2 seconds
 
@@ -137,7 +140,6 @@ class Game{
         this.#gameLoop();
     }
     
-    // INITIAL GAME LOGIC READING AND CLEARING BOX
     // Reads user input and returns it
     #readUserInput(){
         return document.getElementById("input").value; // get user input
@@ -168,7 +170,6 @@ class Game{
         } else if (value) {
             this.buttonList.forEach(button => {
                 button.setDisplay("block");
-                button.disableButton(false);
             })
         }
     }
@@ -179,6 +180,8 @@ class Game{
         let width = window.innerWidth - 500;
 
        this.buttonList.forEach(button => {
+            button.disableButton(true);
+
             button.setPosition(
                 Math.floor(Math.random() * height),  
                 Math.floor(Math.random() * width)
@@ -198,6 +201,7 @@ class Game{
         this.buttonList.forEach(button => {
             const buttonNumber = button.getButtonId();
 
+            //Give buttons clickable functionality.
             document.getElementById(buttonNumber).addEventListener('click', () => {
                 if(counter == parseInt(buttonNumber)){
                     button.displayNumber(true);
