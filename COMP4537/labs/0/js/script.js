@@ -176,8 +176,8 @@ class Game{
 
     // Randomly places the buttons in a random area and hides their number.
     #scatterButtons(){    
-        let height = window.innerHeight - 500;
-        let width = window.innerWidth - 500;
+        let height = window.innerHeight;
+        let width = window.innerWidth;
 
        this.buttonList.forEach(button => {
             button.disableButton(true);
@@ -255,7 +255,6 @@ class Text{
         document.getElementById(id).innerHTML = "";
     }
 }
-
 
 // Initialize the segments.
 document.addEventListener("DOMContentLoaded", () => {
