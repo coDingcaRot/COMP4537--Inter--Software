@@ -247,12 +247,12 @@ class Reader{
 
 //instantiate a different class based on this.
 document.addEventListener("DOMContentLoaded", () => {
-    const path = window.location.pathname.split("/").pop();
-    if (path === "index.html") new Landing();
-    if (path === "writer.html"){  
-        new Writer(new NoteManager());
-    }
-    if (path === "reader.html"){ 
-        new Reader(new NoteManager()); 
-    }
+    let path = window.location.pathname.split("/").pop();
+
+    // Remove the ".html" extension if it exists
+    path = path.replace(".html", "");
+
+    if (path === "index" || path === "") new Landing();
+    if (path === "writer") new Writer(new NoteManager());
+    if (path === "reader") new Reader(new NoteManager());
 });
