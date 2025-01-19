@@ -1,3 +1,7 @@
+/**
+ * ChatGPT was used in the making of this lab
+ */
+
 //Notes object for styling and designing
 class Note {
     constructor(id) {
