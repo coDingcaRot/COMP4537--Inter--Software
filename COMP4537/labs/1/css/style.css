@@ -1,0 +1,18 @@
+.noteblock{
+    border: 1px solid black; 
+    width: 10em; 
+    height: 10em;
+}
+
+
+#lastSave {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#lastRead {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
