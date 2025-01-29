@@ -3,7 +3,7 @@ const http = require('http');
 let date = require('./modules/utils');
 let url = require('url')
 
-http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
     let q = url.parse(req.url, true); //Check if the url is live and then print it
     
     //get query or ? segment
@@ -25,3 +25,5 @@ http.createServer((req, res) => {
 }).listen(8888)
 
 console.log('Server is running...')
+
+module.exports = server
