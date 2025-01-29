@@ -3,5 +3,5 @@
 
 [[redirects]]
     from = "/lab3/*"
-    to = "/.netlify/functions/lab3"
+    to = "/.netlify/functions/index"
     status = 200
