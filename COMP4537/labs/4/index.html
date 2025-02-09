@@ -3,27 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 4 Client Side</title>
+    <title>Lab 4 Home page</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div id="search-section">
-        <h1>Search Word</h1>
-        <form action="">
-            <input type="text" placeholder="Enter word to search" name="search">
-            <button type="submit">Search</button>
-        </form>
+    <div id="listContainer">
+        <h1 id="homepage_title"></h1>
+        <div id="labList">
+            <a href="./search.html" id="search_button"></a> |
+            <a href="./store.html" id="store_button"></a> 
+        </div>
     </div>
-    
-    <div id="add-section">
-        <h1>Add Word</h1>
-        <form action="">
-            <input type="text" placeholder="Enter new word" name="new-word">
-            <input type="text" placeholder="Enter definition" name="definition">
-            <button type="submit">Add</button>
-        </form>
-    </div>
-    
-    <script src="./js/script.js"></script>
+
+    <script src="./js/texthandler.js"></script>
+    <script src="./lang/messages/en/en.js"></script>
 </body>
 </html>
