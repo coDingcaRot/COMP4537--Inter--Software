@@ -101,3 +101,7 @@ a:hover {
 a:active {
     transform: scale(1);
 }
+
+#get_response {
+    text-align: center;
+}
