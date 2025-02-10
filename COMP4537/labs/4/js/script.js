@@ -15,15 +15,21 @@ class ApiCaller {
                             <br><br>
                             Definition: ${response.definition}
                             <br><br>
-                            Total Requests: ${response.totalRequests}`; 
+                            Request #${response.totalRequests}`; 
                         responseBox.style.color = "black"; 
                     } 
                     else if (this.status == 400){ //Error empty search
-                        responseBox.innerHTML = response.message; 
+                        responseBox.innerHTML = 
+                        `${response.message}
+                        <br><br>
+                        Request #${response.totalRequests}`; 
                         responseBox.style.color = "red"; 
                     } 
                     else { //Word not found in dictionary
-                        responseBox.innerHTML = response.message;
+                        responseBox.innerHTML = 
+                        `${response.message}
+                        <br><br>
+                        Request #${response.totalRequests}`;
                         responseBox.style.color = "red";
                     }
                 } catch (e) { // any other extra errors
@@ -50,16 +56,26 @@ class ApiCaller {
                 try {
                     const response = JSON.parse(this.responseText); // Parse response JSON
                     if (this.status == 201) {  //word succesfully created
-                        responseBox.innerHTML = `${response.message}
-                        Total Entries: ${response.totalEntries}`;;
+                        responseBox.innerHTML = 
+                        `${response.message}
+                        <br><br>
+                        Total Entries: ${response.totalEntries}
+                        <br><br>
+                        Request #${response.totalRequests}`;
                         responseBox.style.color = "green";
                     } 
                     else if (this.status == 409) { //Word conflict
-                        responseBox.innerHTML = response.message;
+                        responseBox.innerHTML = 
+                        `${response.message}
+                        <br><br>
+                        Request #${response.totalRequests}`;
                         responseBox.style.color = "red";
                     } 
                     else { //Empty input boxes
-                        responseBox.innerHTML = response.message;
+                        responseBox.innerHTML = 
+                        `${response.message}
+                        <br><br>
+                        Request #${response.totalRequests}`;
                         responseBox.style.color = "red";
                     }
                 } catch (e) { //Any extra error
