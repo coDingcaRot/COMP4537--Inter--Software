@@ -1,3 +1,4 @@
+// ChatGPT was used in aiding the creation of this code
 class ApiCaller {
     api_get(str) {
         const xhttp = new XMLHttpRequest();
